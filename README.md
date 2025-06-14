@@ -1,4 +1,4 @@
-Ping Pong 2D (LÖVE & Lua)
+# Ping Pong 2D (LÖVE & Lua)
 
 A classic 2D Ping Pong game developed using LÖVE and Lua.
 Table of Contents
