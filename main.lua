@@ -125,7 +125,7 @@ function love.update(dt)
             if ballcenter.x < 0 then
                 servingplayer =2
                 paddle2score = paddle2score+1
-                    if(paddle2score==3) then
+                    if(paddle2score==10) then
                         winingplayer = 2
                         sounds['victory']:play()
                         gameState='done'
@@ -172,7 +172,7 @@ function love.keypressed(key)
                  gameState = 'play'
                   else
                     ballcenter:reset()
-                    gameState ='start'  
+                    gameState ='serve' 
                 end
              
      end
@@ -217,10 +217,13 @@ function love.draw()
      love.graphics.printf(" 🏆winner is player  " .. tostring(winingplayer) , 0, 10 , virtualWidth , 'center')
      love.graphics.setFont(headingfont)
      love.graphics.printf("PRESS  R TO RESTART GAME"  , 0, virtualHeight -20 , virtualWidth , 'center')
-     
-       
- end
 
+     if(love.keyboard.isDown('r')) then
+        paddle1score=0
+        paddle2score=0
+        gameState='start'
+     end
+    end
   if (gameState == 'play') then
     love.graphics.setFont(headingfont)
     if(paddle1score==9) then
